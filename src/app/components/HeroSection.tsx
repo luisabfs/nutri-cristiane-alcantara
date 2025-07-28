@@ -6,7 +6,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="min-h-screen relative overflow-hidden py-12 lg:flex lg:items-center lg:pt-0 bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50">
+    <section className="min-h-[calc(100vh-60px)] lg:min-h-screen relative overflow-hidden mt-12 lg:flex lg:items-center lg:pt-0 bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50">
       <div className="w-full relative z-10 h-full">
         {/* Layout Mobile: Imagem no topo */}
         <div className="lg:hidden flex flex-col h-full">
@@ -80,7 +80,7 @@ export default function HeroSection() {
         </div>
 
         {/* Layout Desktop: Grid original - mantido intacto */}
-        <div className="hidden lg:grid lg:grid-cols-2 gap-0 items-stretch lg:pt-0">
+        <div className="hidden lg:grid lg:grid-cols-2 gap-0 items-stretch">
           {/* Coluna da Foto - Ocupando toda a altura */}
           <div className="order-2 lg:order-1 relative h-screen">
             <div className="relative h-full">
@@ -113,7 +113,7 @@ export default function HeroSection() {
           </div>
 
           {/* Coluna do Texto */}
-          <div className="order-1 lg:order-2 text-center flex flex-col justify-center px-8 lg:px-12 bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50">
+          <div className="order-1 lg:order-2 text-center flex flex-col justify-center px-8 lg:px-12 bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50 h-screen">
             <div className="mb-6">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
                 <div>Saúde integral com</div>

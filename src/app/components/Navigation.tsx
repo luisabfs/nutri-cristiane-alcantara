@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -77,10 +78,12 @@ export default function Navigation() {
         <div className="flex justify-center md:justify-between items-center py-2 md:py-4 relative">
           {/* Logo - Centered on mobile, left on desktop */}
           <div className="flex items-center justify-center md:justify-start flex-shrink-0 relative z-20">
-            <img 
+            <Image 
               src="/logo_cristiane.png" 
               alt="Cristiane Alcântara - Nutricionista Funcional" 
-              className="h-16 md:h-14 object-contain"
+              width={120}
+              height={120}
+              className="object-contain h-14"
             />
           </div>
 
@@ -140,7 +143,7 @@ export default function Navigation() {
             <div className="fixed inset-0" onClick={(e) => e.stopPropagation()}>
               <div className="flex flex-col h-full">
                 {/* Conteúdo centralizado */}
-                <div className="flex-1 mt-[79.5px] flex flex-col justify-center px-6 border-b-1 pb-8 pt-4 border-gray-50 bg-white/95 backdrop-blur-md shadow-lg rounded-b-2xl">
+                <div className="flex-1 mt-18 flex flex-col justify-center px-6 border-b-1 pb-8 pt-4 border-gray-50 bg-white/95 backdrop-blur-md shadow-lg rounded-b-2xl">
                   <nav className="space-y-6">
                     {navItems.map((item) => {
                       const isActive = activeSection === item.href.substring(1);
@@ -167,9 +170,9 @@ export default function Navigation() {
       </div>
       
       {/* Overlay para gradiente apenas no mobile */}
-      {!isScrolled && !isMobileMenuOpen && (
+      {/* {!isScrolled && !isMobileMenuOpen && (
         <div className="absolute inset-0 bg-gradient-to-r from-[#c4cdd7]/90 to-[#d8dde8]/90 pointer-events-none md:hidden"></div>
-      )}
+      )} */}
     </nav>
   );
 }
