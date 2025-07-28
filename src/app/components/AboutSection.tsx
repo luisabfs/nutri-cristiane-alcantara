@@ -81,13 +81,56 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold text-gray-800 mb-8">
-            Os Pilares do Método Sozo
+        <div className="text-center mb-8 md:mb-12">
+          <h3 className="text-3xl font-bold text-gray-800 md:mb-8">
+            Os Pilares do <span className="text-purple-600">Método Sozo</span>
           </h3>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Mobile: Horizontal scroll with indicators */}
+        <div className="md:hidden relative">
+          {/* Scroll indicator */}
+          <div className="flex items-center justify-center mb-4 text-purple-600">
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+            </svg>
+            <span className="text-sm font-medium">Deslize para ver</span>
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+          
+          {/* Horizontal scroll container */}
+          <div className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide">
+            {pilares.map((pilar, index) => (
+              <div 
+                key={index}
+                className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:border-purple-300 flex-shrink-0 w-80"
+              >
+                <div className="text-4xl mb-4">{pilar.icon}</div>
+                <h4 className="text-xl font-semibold text-gray-800 mb-3">
+                  {pilar.title}
+                </h4>
+                <p className="text-gray-600 leading-relaxed">
+                  {pilar.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          
+          {/* Scroll dots indicator */}
+          <div className="flex justify-center mt-4 space-x-2">
+            {pilares.map((_, index) => (
+              <div 
+                key={index}
+                className="w-2 h-2 bg-purple-300 rounded-full transition-all duration-300"
+              ></div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: Grid layout */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {pilares.map((pilar, index) => (
             <div 
               key={index}
