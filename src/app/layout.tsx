@@ -16,6 +16,20 @@ export const metadata: Metadata = {
     title: "Cristiane Alcântara - Nutricionista Funcional",
     description: "Saúde integral com o Método Sozo",
     type: "website",
+    images: [
+      {
+        url: "/profile_cristiane.png",
+        width: 1080,
+        height: 1080,
+        alt: "Cristiane Alcântara - Nutricionista Funcional | Método Sozo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cristiane Alcântara - Nutricionista Funcional",
+    description: "Saúde integral com o Método Sozo",
+    images: ["/profile_cristiane.png"],
   },
 };
 
