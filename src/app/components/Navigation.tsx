@@ -13,7 +13,9 @@ export default function Navigation() {
       
       // Detectar seção ativa baseada no scroll
       const sections = ['sobre', 'servico', 'pacotes', 'beneficios', 'depoimentos', 'contato'];
-      const scrollPosition = window.scrollY + 100; // offset para considerar navbar
+      const isMobile = window.innerWidth < 768;
+      const navbarHeight = isMobile ? 60 : 80;
+      const scrollPosition = window.scrollY + navbarHeight; // apenas a altura da navbar
       
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -48,7 +50,7 @@ export default function Navigation() {
       // Altura da navbar responsiva: menor no mobile
       const isMobile = window.innerWidth < 768;
       const navbarHeight = isMobile ? 60 : 80; // 60px no mobile, 80px no desktop
-      const offset = navbarHeight; // 20px de padding extra
+      const offset = navbarHeight; // apenas a altura da navbar
       
       const elementTop = (element as HTMLElement).offsetTop;
       const scrollPosition = elementTop - offset;

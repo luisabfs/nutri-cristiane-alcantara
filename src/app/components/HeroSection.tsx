@@ -6,7 +6,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="min-h-[calc(100vh-50px)] relative overflow-hidden mt-12 lg:flex lg:items-center lg:pt-0 bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50">
+    <section className="min-h-screen relative overflow-hidden py-12 lg:flex lg:items-center lg:pt-0 bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50">
       <div className="w-full relative z-10 h-full">
         {/* Layout Mobile: Imagem no topo */}
         <div className="lg:hidden flex flex-col h-full">
