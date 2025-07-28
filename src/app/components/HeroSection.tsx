@@ -13,13 +13,13 @@ export default function HeroSection() {
         {/* Layout Mobile: Imagem no topo */}
         <div className="lg:hidden flex flex-col h-full">
           {/* Imagem no topo - largura total sem padding */}
-          <div className="relative w-full h-[400px] overflow-hidden rounded-b-3xl">
+          <div className="relative w-full h-[300px] min-h-[250px] max-h-[350px] min-[400px]:h-[400px] overflow-hidden rounded-b-3xl">
             <Image 
               src="/hero_bg.jpg" 
               alt="Cristiane Alcântara - Nutricionista Funcional" 
               fill
               className="object-cover object-center"
-              style={{ objectPosition: 'center 70%' }}
+              style={{ objectPosition: 'center 40%' }}
             />
             {/* Gradiente suave para integrar com o fundo */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#f8f4ff]/40"></div>
@@ -30,52 +30,51 @@ export default function HeroSection() {
           </div>
 
           {/* Conteúdo reorganizado */}
-          <div className="text-center space-y-6 px-4 bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50 flex-1">
+          <div className="text-center space-y-4 min-[400px]:space-y-6 px-4 bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50 flex-1">
             {/* Título principal */}
-            <div className="mb-6">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-                Saúde integral com o{' '}
-                <span className="text-purple-600">Método</span>{' '}
-                <span className="text-purple-600 font-bold">Sozo</span>
+            <div className="mb-4 min-[400px]:mb-6">
+              <h1 className="text-2xl min-[400px]:text-4xl md:text-5xl font-bold text-gray-800 mb-4 min-[400px]:mb-6 leading-tight">
+                <div>Saúde Integral com</div>
+                <div>o <span className="text-purple-600">Método</span> <span className="text-purple-600 font-bold">Sozo</span></div>
               </h1>
             </div>
 
             {/* Nome e título profissional */}
-            <h2 className="text-base md:text-xl font-semibold text-gray-700 mb-6">
+            <h2 className="text-sm min-[400px]:text-base md:text-xl font-semibold text-gray-700 mb-4 min-[400px]:mb-6">
               Cristiane Alcântara · Nutricionista Funcional
             </h2>
 
             {/* Botão centralizado */}
-            <div className="mb-8">
+            <div className="mb-6 min-[400px]:mb-8">
               <button
                 onClick={handleAgendarConsulta}
-                className="bg-gradient-purple-rose text-white font-semibold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-purple-rose text-white font-semibold py-3 px-6 min-[400px]:py-4 min-[400px]:px-8 rounded-full text-sm min-[400px]:text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 Agende sua consulta
               </button>
             </div>
 
             {/* Temas trabalhados - menos destaque */}
-            <div className="space-y-4">
-              <p className="text-xs text-gray-500 font-medium uppercase tracking-wide mb-4">
+            <div className="space-y-3 min-[400px]:space-y-4">
+              <p className="text-xs text-gray-500 font-medium uppercase tracking-wide mb-3 min-[400px]:mb-4">
                 Resgate sua saúde de forma leve e possível 🍃
               </p>
-              <div className="flex flex-wrap gap-2 justify-center text-gray-600">
+              <div className="flex flex-wrap gap-1 min-[400px]:gap-2 justify-center text-gray-600">
                 <div className="flex items-center justify-center space-x-1">
-                  <span className="text-xl">·</span>
-                  <span className="text-sm font-medium">Reeducação Alimentar</span>
+                  <span className="text-lg min-[400px]:text-xl">·</span>
+                  <span className="text-xs min-[400px]:text-sm font-medium">Reeducação Alimentar</span>
                 </div>
                 <div className="flex items-center justify-center space-x-1">
-                  <span className="text-xl">·</span>
-                  <span className="text-sm font-medium">Estratégias Personalizadas</span>
+                  <span className="text-lg min-[400px]:text-xl">·</span>
+                  <span className="text-xs min-[400px]:text-sm font-medium">Estratégias Personalizadas</span>
                 </div>
                 <div className="flex items-center justify-center space-x-1">
-                  <span className="text-xl">·</span>
-                  <span className="text-sm font-medium">Constância e Equilíbrio</span>
+                  <span className="text-lg min-[400px]:text-xl">·</span>
+                  <span className="text-xs min-[400px]:text-sm font-medium">Constância e Equilíbrio</span>
                 </div>
                 <div className="flex items-center justify-center space-x-1">
-                  <span className="text-xl">·</span>
-                  <span className="text-sm font-medium">Vitalidade e Bem-estar</span>
+                  <span className="text-lg min-[400px]:text-xl">·</span>
+                  <span className="text-xs min-[400px]:text-sm font-medium">Vitalidade e Bem-estar</span>
                 </div>
               </div>
             </div>
