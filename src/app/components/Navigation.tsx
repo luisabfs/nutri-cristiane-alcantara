@@ -146,7 +146,7 @@ export default function Navigation() {
                         <button
                           key={item.href}
                           onClick={() => scrollToSection(item.href)}
-                          className={`block font-medium text-lg transition-all duration-300 text-center w-full ${
+                          className={`block font-medium text-lg transition-all duration-300 text-center w-fit mx-auto ${
                             isActive 
                               ? 'text-purple-600 border-b-2 border-purple-400 pb-2' 
                               : 'text-gray-800 hover:text-purple-600'

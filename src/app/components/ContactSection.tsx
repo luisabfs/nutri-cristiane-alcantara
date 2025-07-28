@@ -26,7 +26,7 @@ export default function ContactSection() {
   ];
 
   return (
-    <section id="contato" className="h-screen flex items-center bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50">
+    <section id="contato" className="py-20 flex items-center bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
