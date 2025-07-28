@@ -1,30 +1,6 @@
 'use client';
 
 export default function ContactSection() {
-  const contactInfo = [
-    {
-      icon: "💬",
-      title: "WhatsApp",
-      value: "(79) 99117-5352",
-      link: "https://wa.me/5579991175352?text=Olá! Gostaria de falar com a Cristiane Alcântara sobre nutrição funcional.",
-      action: "Falar pelo WhatsApp"
-    },
-    {
-      icon: "📧",
-      title: "E-mail",
-      value: "crisalcantarabc@gmail.com",
-      link: "mailto:crisalcantarabc@gmail.com?subject=Consulta sobre Nutrição Funcional",
-      action: "Enviar E-mail"
-    },
-    {
-      icon: "📸",
-      title: "Instagram",
-      value: "@cristianealcantaranutri",
-      link: "https://www.instagram.com/cristianealcantaranutri/",
-      action: "Me siga no Instagram"
-    }
-  ];
-
   return (
     <section id="contato" className="py-20 pt-12 flex items-center bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50">
       <div className="max-w-6xl mx-auto px-4">

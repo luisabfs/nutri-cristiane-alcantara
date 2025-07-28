@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function HeroSection() {
   const handleAgendarConsulta = () => {
     window.open('https://wa.me/5579991175352?text=Olá! Gostaria de agendar uma consulta com a Cristiane Alcântara.', '_blank');
@@ -12,10 +14,11 @@ export default function HeroSection() {
         <div className="lg:hidden flex flex-col h-full">
           {/* Imagem no topo - largura total sem padding */}
           <div className="relative w-full h-[400px] overflow-hidden rounded-b-3xl">
-            <img 
+            <Image 
               src="/hero_bg.jpg" 
               alt="Cristiane Alcântara - Nutricionista Funcional" 
-              className="w-full h-full object-cover object-center"
+              fill
+              className="object-cover object-center"
               style={{ objectPosition: 'center 70%' }}
             />
             {/* Gradiente suave para integrar com o fundo */}
@@ -87,10 +90,11 @@ export default function HeroSection() {
               {/* Foto principal ocupando toda a altura */}
               <div className="relative h-full">
                 <div className="w-full h-full overflow-hidden">
-                  <img 
+                  <Image 
                     src="/hero_bg.jpg" 
                     alt="Cristiane Alcântara - Nutricionista Funcional" 
-                    className="w-full h-full object-cover object-center"
+                    fill
+                    className="object-cover object-center"
                     style={{ objectPosition: 'center 70%' }}
                   />
                   {/* Gradiente principal para transição */}

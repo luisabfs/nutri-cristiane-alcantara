@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function TestimonialsSection() {
   const testimonials = [
     {
@@ -62,9 +64,11 @@ export default function TestimonialsSection() {
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   {/* Coluna da imagem */}
                   <div className="order-2 md:order-1">
-                    <img
+                    <Image
                       src="/mockup_feedback_luisa.png"
                       alt="Depoimento da Luísa Barros"
+                      width={500}
+                      height={300}
                       className="w-full h-auto rounded-xl shadow-lg"
                     />
                   </div>

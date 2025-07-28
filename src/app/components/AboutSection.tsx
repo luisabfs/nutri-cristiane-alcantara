@@ -1,3 +1,7 @@
+'use client';
+
+import Image from 'next/image';
+
 export default function AboutSection() {
   const pilares = [
     {
@@ -33,7 +37,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="sobre" className="py-20 bg-white">
+    <section id="sobre" className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
@@ -47,6 +51,7 @@ export default function AboutSection() {
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">
               Olá, sou Cristiane Alcântara
             </h3>
+            
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               Sou nutricionista clínica funcional, comprometida em ajudar pessoas a resgatarem sua saúde de forma natural, leve e sustentável.
               Tenho formação em Nutrição e sou pós-graduanda em Nutrição Clínica Funcional.
@@ -64,16 +69,18 @@ export default function AboutSection() {
           
           <div className="bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50 p-8 rounded-2xl">
             <div className="w-48 h-48 bg-gradient-to-br from-purple-200 to-lilac-200 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
-              <img 
+              <Image 
                 src="/profile_cristiane.png" 
                 alt="Cristiane Alcântara - Nutricionista Funcional" 
-                className="w-full h-full object-cover scale-110 "
+                width={192}
+                height={192}
+                className="w-full h-full object-cover scale-110"
               />
             </div>
             <h4 className="text-xl font-semibold text-gray-800 mb-4 text-center">
               O que é o Método Sozo?
             </h4>
-            <p className="text-gray-600 text-center leading-relaxed text-justify">
+            <p className="text-gray-600 text-center leading-relaxed md:text-justify">
              É uma abordagem integrativa que promove saúde e bem-estar de forma completa.
              Seu nome, que significa <em>resgate e salvação</em>, traduz a missão de restaurar a saúde física, mental, espiritual e social com base em evidências científicas e princípios de fé.
 
