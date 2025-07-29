@@ -79,11 +79,11 @@ export default function Navigation() {
           {/* Logo - Centered on mobile, left on desktop */}
           <div className="flex items-center justify-center md:justify-start flex-shrink-0 relative z-20">
             <Image 
-              src="/logo_cristiane.png" 
+              src="/logo_horizontal.svg" 
               alt="Cristiane Alcântara - Nutricionista Funcional" 
-              width={120}
-              height={120}
-              className="object-contain h-14"
+              width={180}
+              height={180}
+              className="object-cover h-12"
             />
           </div>
 
@@ -143,7 +143,7 @@ export default function Navigation() {
             <div className="fixed inset-0" onClick={(e) => e.stopPropagation()}>
               <div className="flex flex-col h-full">
                 {/* Conteúdo centralizado */}
-                <div className="flex-1 mt-18 flex flex-col justify-center px-6 border-b-1 pb-8 pt-4 border-gray-50 bg-white/95 backdrop-blur-md shadow-lg rounded-b-2xl">
+                <div className="flex-1 mt-15 flex flex-col justify-center px-6 border-b-1 pb-8 pt-4 border-gray-50 bg-white/95 backdrop-blur-md shadow-lg rounded-b-2xl">
                   <nav className="space-y-6">
                     {navItems.map((item) => {
                       const isActive = activeSection === item.href.substring(1);
@@ -168,11 +168,6 @@ export default function Navigation() {
           </div>
         )}
       </div>
-      
-      {/* Overlay para gradiente apenas no mobile */}
-      {/* {!isScrolled && !isMobileMenuOpen && (
-        <div className="absolute inset-0 bg-gradient-to-r from-[#c4cdd7]/90 to-[#d8dde8]/90 pointer-events-none md:hidden"></div>
-      )} */}
     </nav>
   );
 }
