@@ -18,6 +18,9 @@ export default function HeroSection() {
               src="/hero_bg.jpg" 
               alt="Cristiane Alcântara - Nutricionista Funcional" 
               fill
+              priority
+              placeholder="blur"
+              blurDataURL="/hero_bg_compressed.webp"
               className="object-cover object-center"
               style={{ objectPosition: 'center 40%' }}
             />
