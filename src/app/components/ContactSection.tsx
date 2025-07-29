@@ -1,5 +1,7 @@
 'use client';
 
+import { trackEvent } from "../helpers/analytics";
+
 export default function ContactSection() {
   return (
     <section id="contato" className="py-20 pt-12 flex items-center bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50">
@@ -40,7 +42,14 @@ export default function ContactSection() {
 
           <div className="text-center">
             <button
-              onClick={() => window.open('https://wa.me/5579991175352?text=Olá! Gostaria de agendar uma consulta com a nutricionista Cristiane Alcântara.', '_blank')}
+              onClick={() => {
+                window.open('https://wa.me/5579991175352?text=Olá! Gostaria de agendar uma consulta com a nutricionista Cristiane Alcântara.', '_blank');
+                trackEvent({
+                  action: 'click_whatsapp',
+                  category: 'CTA',
+                  label: 'Botão Quero Agendar - Contato',
+                });
+              }}
               className="bg-gradient-purple-rose text-white font-semibold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               Quero Agendar

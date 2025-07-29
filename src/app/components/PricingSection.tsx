@@ -1,5 +1,7 @@
 'use client';
 
+import { trackEvent } from "../helpers/analytics";
+
 export default function PricingSection() {
   const packages = [
     {
@@ -64,13 +66,12 @@ export default function PricingSection() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {packages.map((pkg, index) => (
-            <div 
+            <div
               key={index}
-              className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 ${
-                pkg.popular 
-                  ? 'border-purple-500 bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50' 
+              className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 ${pkg.popular
+                  ? 'border-purple-500 bg-gradient-to-br from-purple-50 via-lilac-50 to-yellow-50'
                   : 'border-gray-200'
-              }`}
+                }`}
             >
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -109,13 +110,19 @@ export default function PricingSection() {
               </div>
 
               <div className="text-center">
-                <button 
-                  onClick={() => window.open(`https://wa.me/5579991175352?text=Olá! Gostaria de agendar o ${pkg.name} com ${pkg.sessions} ${getSessionText(pkg.sessions)} com a Cristiane Alcântara.`, '_blank')}
-                  className={`w-full font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 ${
-                    pkg.popular
+                <button
+                  onClick={() => {
+                    window.open(`https://wa.me/5579991175352?text=Olá! Gostaria de agendar o ${pkg.name} com ${pkg.sessions} ${getSessionText(pkg.sessions)} com a nutricionista Cristiane Alcântara.`, '_blank');
+                    trackEvent({
+                      action: 'click_program',
+                      category: 'PROGRAM',
+                      label: `${pkg.name} - Pacotes Disponíveis`,
+                    });
+                  }}
+                  className={`w-full font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 ${pkg.popular
                       ? 'bg-gradient-purple-rose text-white'
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
-                  }`}
+                    }`}
                 >
                   Escolher {pkg.name}
                 </button>
@@ -131,7 +138,7 @@ export default function PricingSection() {
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
               Aceito PIX, transferência bancária e parcelamento em até 3x sem juros.
-              <br/>
+              <br />
               Pagamento realizado após a primeira consulta.
             </p>
             <div className="flex justify-center space-x-4 text-sm text-gray-500">

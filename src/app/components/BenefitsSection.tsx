@@ -1,5 +1,7 @@
 'use client';
 
+import { trackEvent } from "../helpers/analytics";
+
 export default function BenefitsSection() {
   const benefits = [
     {
@@ -43,14 +45,14 @@ export default function BenefitsSection() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-lilac-500 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Com o Método Sozo, você experimentará transformações reais em sua vida, 
+            Com o Método Sozo, você experimentará transformações reais em sua vida,
             conquistando uma saúde verdadeiramente integral.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <div 
+            <div
               key={index}
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
             >
@@ -75,9 +77,9 @@ export default function BenefitsSection() {
               Transformação Real
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Esses benefícios são conquistados de forma gradual e sustentável, 
-              respeitando seu ritmo e individualidade. O Método Sozo trabalha 
-              de forma multidimensional para que você sinta as mudanças em todos os 
+              Esses benefícios são conquistados de forma gradual e sustentável,
+              respeitando seu ritmo e individualidade. O Método Sozo trabalha
+              de forma multidimensional para que você sinta as mudanças em todos os
               aspectos da sua vida.
             </p>
             <div className="flex justify-center space-x-4 text-sm text-gray-500">
@@ -90,7 +92,14 @@ export default function BenefitsSection() {
 
         <div className="mt-12 text-center">
           <button
-            onClick={() => window.open('https://wa.me/5579991175352?text=Olá! Gostaria de agendar uma consulta com a Cristiane Alcântara.', '_blank')}
+            onClick={() => {
+              window.open('https://wa.me/5579991175352?text=Olá! Gostaria de agendar uma consulta com a nutricionista Cristiane Alcântara.', '_blank');
+              trackEvent({
+                action: 'click_whatsapp',
+                category: 'CTA',
+                label: 'Botão Agendar Consulta - Benefícios',
+              });
+            }}
             className="bg-gradient-purple-rose text-white font-semibold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             Agendar Consulta
