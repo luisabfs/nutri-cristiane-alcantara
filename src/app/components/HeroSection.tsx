@@ -1,10 +1,17 @@
 'use client';
 
 import Image from 'next/image';
+import { trackEvent } from '../helpers/analytics';
 
 export default function HeroSection() {
   const handleAgendarConsulta = () => {
-    window.open('https://wa.me/5579991175352?text=Olá! Gostaria de agendar uma consulta com a Cristiane Alcântara.', '_blank');
+    window.open('https://wa.me/5579991175352?text=Olá! Gostaria de agendar uma consulta com a nutricionista Cristiane Alcântara.', '_blank');
+    trackEvent({
+      action: 'click_whatsapp',
+      category: 'CTA',
+      label: 'Botão Agende sua consulta - Hero',
+    });
+
   };
 
   return (
@@ -14,9 +21,9 @@ export default function HeroSection() {
         <div className="lg:hidden flex flex-col h-full">
           {/* Imagem no topo - largura total sem padding */}
           <div className="relative w-full h-[300px] min-h-[250px] max-h-[350px] min-[400px]:h-[400px] overflow-hidden rounded-b-3xl">
-            <Image 
-              src="/hero_bg.jpg" 
-              alt="Cristiane Alcântara - Nutricionista Funcional" 
+            <Image
+              src="/hero_bg.jpg"
+              alt="Cristiane Alcântara - Nutricionista Funcional"
               fill
               priority
               placeholder="blur"
@@ -92,9 +99,9 @@ export default function HeroSection() {
               {/* Foto principal ocupando toda a altura */}
               <div className="relative h-full">
                 <div className="w-full h-full overflow-hidden">
-                  <Image 
-                    src="/hero_bg.jpg" 
-                    alt="Cristiane Alcântara - Nutricionista Funcional" 
+                  <Image
+                    src="/hero_bg.jpg"
+                    alt="Cristiane Alcântara - Nutricionista Funcional"
                     fill
                     className="object-cover object-center"
                     style={{ objectPosition: 'center 70%' }}
@@ -112,7 +119,7 @@ export default function HeroSection() {
                   <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-purple-50/60 to-transparent"></div>
                 </div>
               </div>
-              
+
               {/* Elemento decorativo sutil */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-purple-400/10 to-lilac-500/10 rounded-full blur-sm"></div>
             </div>
@@ -169,7 +176,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      
+
       {/* Elementos decorativos de fundo */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-purple-200/30 rounded-full blur-xl"></div>
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-lilac-200/20 rounded-full blur-xl"></div>

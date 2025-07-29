@@ -1,5 +1,7 @@
 'use client';
 
+import { trackEvent } from "../helpers/analytics";
+
 export default function ServicesSection() {
   const serviceFeatures = [
     "Anamnese completa e detalhada",
@@ -27,7 +29,7 @@ export default function ServicesSection() {
             <div className="text-center mb-8">
               <p className="text-lg text-gray-600 leading-relaxed">
                 Ofereço consultas de orientação nutricional com a abordagem completa do{' '}
-                <strong className="text-purple-600">Método Sozo</strong>, considerando todos os aspectos da sua saúde integral. 
+                <strong className="text-purple-600">Método Sozo</strong>, considerando todos os aspectos da sua saúde integral.
                 Uma abordagem integrativa e personalizada que considera sua individualidade e respeitando sua realidade.
               </p>
             </div>
@@ -48,7 +50,14 @@ export default function ServicesSection() {
 
             <div className="mt-12 text-center">
               <button
-                onClick={() => window.open('https://wa.me/5579991175352?text=Olá! Gostaria de agendar uma consulta de orientação nutricional com a Cristiane Alcântara.', '_blank')}
+                onClick={() => {
+                  window.open('https://wa.me/5579991175352?text=Olá! Gostaria de agendar uma consulta de orientação nutricional com a nutricionista Cristiane Alcântara.', '_blank');
+                  trackEvent({
+                    action: 'click_whatsapp',
+                    category: 'CTA',
+                    label: 'Botão Agendar Consulta - Serviço',
+                  });
+                }}
                 className="bg-gradient-purple-rose text-white font-semibold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 Agendar Consulta
